@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Email Header Analyzer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Email Header Analyzer</h1>
+    <textarea id="headerInput" placeholder="Paste email header here..."></textarea>
+    <button onclick="analyzeHeader()">Analyze</button>
+    <pre id="result"></pre>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
