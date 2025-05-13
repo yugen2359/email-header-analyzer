@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request, jsonify
+import os  # Added to read PORT from environment
 
 app = Flask(__name__)
 
@@ -31,4 +32,6 @@ def analyze():
     return jsonify(result)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    # Bind to 0.0.0.0 and use dynamic port for Render deployment
+    port = int(os.environ.get('PORT', 5000))
+    app.run(debug=False, host='0.0.0.0', port=port)
